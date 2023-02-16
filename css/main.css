@@ -41,6 +41,59 @@
     gap: 50px;
 }
 
+#header .gnb>li {
+    position: relative;
+}
+
+#header .gnb>li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #00a88e;
+}
+
+#header .gnb>li:hover a::after {
+    display: none;
+}
+
+#header .gnb .submenu {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 150px;
+    height: auto;
+    line-height: 50px;
+    background: #fff;
+    border: 2px solid #00a88e;
+
+    z-index: 9999;
+    margin: 0 0 0 -10px;
+
+    font-size: 14px;
+}
+
+#header .gnb>li:hover .submenu {
+    display: block;
+}
+
+
+#header .gnb .submenu li {
+    padding: 0 0 0 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#header .gnb .submenu li>a {
+    display: block;
+}
+
+.main_slide .slick-list,
+.main_slide .slide-track {
+    transition-delay: 0.3s;
+}
 
 .main_slide .itm {
     position: relative;
@@ -335,4 +388,82 @@
     font-size: 20px;
     line-height: 32px;
     color: #f1f1f1;
+}
+
+
+#footer {}
+
+#footer .f_top {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+    justify-content: center;
+
+    background: #f9f9f9;
+}
+
+#footer .inner {
+    display: flex;
+    font-size: 14px;
+    padding: 30px 0;
+    color: #777;
+    justify-content: space-between;
+}
+
+#footer .inner .fnb ul {
+    display: flex;
+    margin: 0 0 7px 0;
+}
+
+#footer .inner .fnb ul li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: #999;
+    margin: 0 15px;
+}
+
+#footer .inner .fnb address {
+    margin: 10px 0 0 0;
+}
+
+#footer .inner select {
+    height: 30px;
+    width: 120px;
+    padding: 0 10px;
+
+    border: 1px solid #999;
+    border-radius: 4px;
+    color: #444;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.toTop {
+    position: fixed;
+    bottom: 80px;
+    right: 100px;
+}
+
+.toTop i {
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 1px 5px 10px #999;
+    z-index: 1000;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.toTop.on i {
+    opacity: 1;
+    visibility: visible;
 }

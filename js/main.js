@@ -17,7 +17,7 @@ $(function () {
         dots: false,
         slidesToShow: 5,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 2000,
     });
 
     $('.map_menu>li').on('click', function (event) {
@@ -26,5 +26,24 @@ $(function () {
         $(this).addClass('on').siblings().removeClass('on');
         $('.inner .map').eq(idx).addClass('on').siblings().removeClass('on')
     })
+
+
+    $(window).on('scroll', function () {
+        var sct = $(window).scrollTop();
+        console.log(sct);
+
+        if (sct > 500) {
+            // $('.toTop').fadeIn();
+            $('.toTop').addClass('on')
+        } else {
+            $('.toTop').removeClass('on')
+        }
+
+    })
+
+    $('.toTop').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 })
+    })
+
 
 })
