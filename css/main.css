@@ -90,6 +90,61 @@
     display: block;
 }
 
+.mbtn {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .mbtn {
+        display: block;
+
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        line-height: 1;
+        font-size: 40px;
+
+    }
+
+    #header h1 {
+        position: relative;
+        z-index: 999;
+        padding: 0 30px;
+    }
+
+    #header .gnb {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background: #fff;
+        width: calc(100% - 90px);
+        height: 100vh;
+        border-right: 1px solid #ddd;
+        line-height: 40px;
+        transition: 0.5s;
+    }
+
+    #header .gnb.on {
+        left: 0;
+    }
+
+    #header .inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #header .gnb>li {
+        z-index: 9999;
+        padding: 150px 0 0 0;
+        background: #fff;
+    }
+
+    #header nav>ul>li>a {
+        display: block;
+        padding: 0 30px;
+    }
+}
+
 .main_slide .slick-list,
 .main_slide .slide-track {
     transition-delay: 0.3s;

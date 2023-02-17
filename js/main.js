@@ -45,5 +45,7 @@ $(function () {
         $('html, body').animate({ scrollTop: 0 })
     })
 
-
+    $('.mbtn').on('click', function () {
+        $('#header .gnb').toggleClass('on')
+    })
 })
